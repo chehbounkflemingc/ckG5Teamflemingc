@@ -22,7 +22,9 @@
   <script src="https://unpkg.com/esri-leaflet-renderers@2.0.6/dist/esri-leaflet-renderers.js"
     integrity="sha512-mhpdD3igvv7A/84hueuHzV0NIKFHmp2IvWnY5tIdtAHkHF36yySdstEVI11JZCmSY4TCvOkgEoW+zcV/rUfo0A=="
     crossorigin=""></script>
-
+  <!-- Load GeoJSON Features fron GEOJSON files -->
+  <script src="https://ckG5Teamflemingc/FourSeasons_MountainBikingTrails.geojson" type="text/javascript"></script>
+    
 	
   <style>
     html,
@@ -45,20 +47,10 @@
     });
     L.esri.basemapLayer('Topographic').addTo(map);
 	  
-const DeepRiverLayer0 = L.esri.featureLayer({
-      url: 'https://chibramsme.duckdns.org:6443/arcgis/rest/services/kchehbou/G5DeepRiverTrailsMap/MapServer/0/'
-    }).addTo(map);	
+/* Four Season Trails GeoJSON */
+var fourseason = new L.LayerGroup();
+L.geoJson(ckG5Teamflemingc/FourSeasons_MountainBikingTrails, {style: fourseasonStyle}).addTo(fourseason);	
      
-const DeepRiverLayer1 = L.esri.featureLayer({
-      url: 'https://chibramsme.duckdns.org:6443/arcgis/rest/services/kchehbou/G5DeepRiverTrailsMap/MapServer/1/'
-    }).addTo(map);
-     const DeepRiverLayer2 = L.esri.featureLayer({
-      url: 'https://chibramsme.duckdns.org:6443/arcgis/rest/services/kchehbou/G5DeepRiverTrailsMap/MapServer/2/'
-    }).addTo(map);
-     const DeepRiverLayer3 = L.esri.featureLayer({
-      url: 'https://chibramsme.duckdns.org:6443/arcgis/rest/services/kchehbou/G5DeepRiverTrailsMap/MapServer/3/'
-    }).addTo(map);
-
 		
   </script>
 </body>
